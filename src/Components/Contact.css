@@ -1,0 +1,54 @@
+.contact-section {
+    background: #1c1c1c;
+    color: white;
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+.orange-line {
+    width: 60px;
+    height: 3px;
+    background-color: orange;
+}
+
+.contact-heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+.contact-heading .bold {
+    font-weight: 700;
+}
+
+.contact-form {
+    background-color: #6c6c6c;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.email-input {
+    border: none;
+    padding: 10px 15px;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    width: 250px;
+}
+
+.email-input::placeholder {
+    color: #ccc;
+}
+
+.join-btn {
+    background-color: orange;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.join-btn:hover {
+    background-color: #ff9900;
+}

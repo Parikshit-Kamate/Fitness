@@ -1,0 +1,80 @@
+/* Remove all default spacing and ensure full background coverage */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c;
+    overflow-x: hidden;
+}
+
+.about-page {
+    height: 100%;
+    background-color: #1c1c1c;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* Animation keyframes */
+@keyframes floatLeftRight {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(100px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatRightLeft {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-100px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatInSquare {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(40px, 0);
+    }
+
+    50% {
+        transform: translate(40px, 40px);
+    }
+
+    75% {
+        transform: translate(0, 40px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Animation classes */
+.floating {
+    animation: floatLeftRight 3s ease-in-out infinite;
+}
+
+.floating-reverse {
+    animation: floatRightLeft 3s ease-in-out infinite;
+}
+
+.floating-square {
+    animation: floatInSquare 4s linear infinite;
+}
