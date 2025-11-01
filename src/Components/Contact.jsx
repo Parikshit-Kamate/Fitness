@@ -7,13 +7,11 @@ const Contact = () => {
     const handleJoinNow = (e) => {
         e.preventDefault()
 
-        const recipient = 'parikshitkamate022@gmail.com'
-        const subject = 'Join Fitness Program'
-        const body = `Hi, I am interested in joining your fitness program. My email is: ${email}`
+        const recipient = ' To : parikshitkamate022@gmail.com'
+        const subject = 'Subject : Join Fitness Program'
 
-        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(
-            subject
-        )}&body=${encodeURIComponent(body)}`
+        // No body param — opens a blank compose window
+        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}`
         window.open(mailtoLink, '_blank')
     }
 
@@ -24,8 +22,7 @@ const Contact = () => {
                 <span className="bold">YOUR BODY</span> <br /> CONTACT WITH US ?
             </h2>
 
-            {/* Use a form so `required` actually blocks submission */}
-            <form className="contact-form d-flex" onSubmit={handleJoinNow} noValidate={false}>
+            <form className="contact-form d-flex" onSubmit={handleJoinNow}>
                 <input
                     type="email"
                     className="email-input"
