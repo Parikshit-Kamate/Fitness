@@ -4,12 +4,16 @@ import './Contact.css'
 const Contact = () => {
     const [email, setEmail] = useState('')
 
-    const handleJoinNow = () => {
+    const handleJoinNow = (e) => {
+        e.preventDefault()
+
         const recipient = 'parikshitkamate022@gmail.com'
         const subject = 'Join Fitness Program'
         const body = `Hi, I am interested in joining your fitness program. My email is: ${email}`
 
-        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+        const mailtoLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${encodeURIComponent(
+            subject
+        )}&body=${encodeURIComponent(body)}`
         window.open(mailtoLink, '_blank')
     }
 
@@ -20,18 +24,20 @@ const Contact = () => {
                 <span className="bold">YOUR BODY</span> <br /> CONTACT WITH US ?
             </h2>
 
-            <div className="contact-form d-flex">
+            {/* Use a form so `required` actually blocks submission */}
+            <form className="contact-form d-flex" onSubmit={handleJoinNow} noValidate={false}>
                 <input
                     type="email"
                     className="email-input"
                     placeholder="enter your email address"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    required
                 />
-                <button className="join-btn" onClick={handleJoinNow}>
+                <button className="join-btn" type="submit">
                     Join Now
                 </button>
-            </div>
+            </form>
         </div>
     )
 }
